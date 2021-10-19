@@ -1,5 +1,9 @@
 package co.edu.usa.farm.model.dao;
 
-public interface IFarm {
+import org.springframework.data.repository.CrudRepository;
+
+import co.edu.usa.farm.model.Farm;
+
+public interface IFarm extends CrudRepository<Farm, Integer>{
 
 }

@@ -1,5 +1,9 @@
 package co.edu.usa.farm.model.dao;
 
-public interface IMessage {
+import org.springframework.data.repository.CrudRepository;
+
+import co.edu.usa.farm.model.Message;
+
+public interface IMessage extends CrudRepository<Message, Integer>{
 
 }

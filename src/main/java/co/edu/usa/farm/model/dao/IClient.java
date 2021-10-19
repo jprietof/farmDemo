@@ -1,5 +1,9 @@
 package co.edu.usa.farm.model.dao;
 
-public interface IClient {
+import org.springframework.data.repository.CrudRepository;
+
+import co.edu.usa.farm.model.Client;
+
+public interface IClient extends CrudRepository<Client, Integer>{
 
 }

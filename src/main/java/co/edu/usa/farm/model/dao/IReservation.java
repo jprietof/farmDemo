@@ -1,5 +1,9 @@
 package co.edu.usa.farm.model.dao;
 
-public interface IReservation {
+import org.springframework.data.repository.CrudRepository;
+
+import co.edu.usa.farm.model.Reservation;
+
+public interface IReservation extends CrudRepository<Reservation, Integer>{
 
 }

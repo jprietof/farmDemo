@@ -1,5 +1,9 @@
 package co.edu.usa.farm.model.dao;
 
-public interface ICategory {
+import org.springframework.data.repository.CrudRepository;
+
+import co.edu.usa.farm.model.Category;
+
+public interface ICategory extends CrudRepository<Category, Integer>{
 
 }
