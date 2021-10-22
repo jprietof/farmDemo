@@ -24,14 +24,14 @@ public class Farm implements Serializable{
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
+	private String name;
 	private String address;
 	private Integer extension;
-	private String name;
 	private String description;
 	
 	@ManyToOne
 	@JoinColumn(name="categoryId")
-	@JsonIgnoreProperties("farm")
+	@JsonIgnoreProperties("farms")
 	private Category category;
 	
 	@OneToMany(cascade = {CascadeType.PERSIST}, mappedBy = "farm")

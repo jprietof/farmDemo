@@ -38,8 +38,8 @@ public class ServiceReservation {
 		if(reservation.getIdReservation()!=null) {
 			Optional<Reservation> e= metodosCrud.getReservation(reservation.getIdReservation());
 			if(!e.isEmpty()) {
-				if(reservation.getStarDate()!=null) {
-					e.get().setStarDate(reservation.getStarDate());
+				if(reservation.getStartDate()!=null) {
+					e.get().setStartDate(reservation.getStartDate());
 				}
 				if(reservation.getDevolutionDate()!=null) {
 					e.get().setDevolutionDate(reservation.getDevolutionDate());
