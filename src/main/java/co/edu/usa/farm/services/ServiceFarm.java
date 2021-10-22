@@ -40,8 +40,8 @@ public class ServiceFarm {
 				if(farm.getName()!=null) {
 					e.get().setAddress(farm.getAddress());
 				}
-				if(farm.getExension()!=null){
-					e.get().setExension(farm.getExension());
+				if(farm.getExtension()!=null){
+					e.get().setExtension(farm.getExtension());
 				}
 				if(farm.getName()!=null) {
 					e.get().setName(farm.getName());
