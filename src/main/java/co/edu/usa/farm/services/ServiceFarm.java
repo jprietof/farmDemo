@@ -38,13 +38,13 @@ public class ServiceFarm {
 			Optional<Farm> e=metodosCrud.getFarm(farm.getId());
 			if(!e.isEmpty()) {
 				if(farm.getName()!=null) {
+					e.get().setName(farm.getName());
+				}
+				if(farm.getAddress()!=null) {
 					e.get().setAddress(farm.getAddress());
 				}
 				if(farm.getExtension()!=null){
 					e.get().setExtension(farm.getExtension());
-				}
-				if(farm.getName()!=null) {
-					e.get().setName(farm.getName());
 				}
 				if(farm.getDescription()!=null) {
 					e.get().setDescription(farm.getDescription());

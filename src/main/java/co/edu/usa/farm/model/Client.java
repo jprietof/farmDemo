@@ -18,8 +18,8 @@ public class Client implements Serializable{
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer idClient;
-	private String password;
 	private String email;
+	private String password;
 	private String name;
 	private Integer age;
 	
