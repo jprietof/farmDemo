@@ -31,7 +31,7 @@ public class ControllerCategory {
 		return service.getAll();
 	}
 	
-	@GetMapping("/{id")
+	@GetMapping("/{id}")
 	public Optional<Category> getCategory(@PathVariable("id") int categoryId){
 		return service.getCategory(categoryId);
 	}
