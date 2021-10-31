@@ -1,0 +1,90 @@
+a {
+  text-decoration: none;
+}
+.header-dark .navbar {
+  /*background: transparent;*/
+  background: #444;
+  color: #fff;
+  border-radius: 0;
+  box-shadow: none;
+  border: none;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+  font-weight: bold;
+}
+.navbar .navbar-brand {
+  color: #fff;
+}
+/*.navbar-expand-lg .navbar-collapse {
+  display: flex !important;
+  flex-basis: auto;
+}*/
+.navbar-text {
+  padding: 0.5rem;
+}
+.navbar-text a {
+  color: #fff;
+}
+.mb-3 {
+  margin-bottom: 1rem !important;
+}
+form .form-control {
+  background: #f7f9fc;
+  border: none;
+  border-bottom: 1px solid #dfe7f1;
+  border-radius: 0;
+  box-shadow: none;
+  outline: none;
+  color: inherit;
+  text-indent: 6px;
+  height: 40px;
+}
+form {
+  width: 80%;
+  margin: 40px auto;
+}
+form .btn-primary {
+  border: none;
+  border-radius: 4px;
+  padding: 11px;
+  box-shadow: none;
+  margin-top: 35px;
+  text-shadow: none;
+  outline: none !important;
+}
+form .btn-primary:hover {
+  background: #198754;
+}
+form .btn-secundary {
+  background: #f4476b;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 11px;
+  box-shadow: none;
+  margin-top: 35px;
+  text-shadow: none;
+  outline: none !important;
+}
+form .btn-secundary:hover {
+  background: #d33b5a;
+  color: #fff;
+}
+
+/*****************************
+            FOOTER
+******************************/
+.footer-basic {
+  padding: 20px 0;
+  background-color: #444;
+  color: #fff;
+  position: fixed;
+  width: 100%;
+  bottom: 0px;
+}
+.footer-basic .copyright {
+  margin-top: 15px;
+  text-align: center;
+  font-size: 13px;
+  margin-bottom: 0;
+}

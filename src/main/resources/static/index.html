@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Team G15-4 USA">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-uWxY/CJNBR+1zjPWmfnSnVxwRheevXITnMqoEIeG1LJrdI0GlVs/9cVSyPYXdcSF" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.6.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Fincas</title>
+</head>
+<body>
+    <header class="header-dark">
+        <nav class="navbar navbar-expand-lg">
+            <div class="container">
+                <a class="navbar-brand" href="#">Fincas USA</a>
+                <button data-bs-toggle="collapse" data-bs-target="#navcol-1" class="navbar-toggler">
+                    <span class="visually-hidden">Toggle navigation</span>
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+            
+            <div class="collapse navbar-collapse">
+                <span class="navbar-text">
+                    <a class="login" href="#">log In</a>
+                </span>
+            </div>
+        </nav>
+        <div class="col-md-8 offset-md-2">
+            <h1 class="text-center">Alquiler de fincas</h1>
+        </div>
+    </header>
+    <!--Card navigation-->
+    <div class="container hero">
+        <div class="card">
+            <div class="card-header">
+                <ul class="nav nav-tabs card-header-tabs" id="nav-tab" role="tablist">
+                    <li class="nav-item"><a class="nav-link active" id="nav-farm-tab" data-bs-toggle="tab" data-bs-target="#nav-farm" type="button" role="tab" aria-controls="nav-farm" aria-selected="true">Fincas</a></li>
+                    <li class="nav-item"><a class="nav-link" id="nav-client-tab" data-bs-toggle="tab" data-bs-target="#nav-client" type="button" role="tab" aria-controls="nav-client" aria-selected="false">Clientes</a></li>
+                    <li class="nav-item"><a class="nav-link" id="nav-message-tab" data-bs-toggle="tab" data-bs-target="#nav-message" type="button" role="tab" aria-controls="nav-message" aria-selected="false">Mensajes</a></li>
+                    <li class="nav-item"><a class="nav-link" id="nav-category-tab" data-bs-toggle="tab" data-bs-target="#nav-category" type="button" role="tab" aria-controls="nav-category" aria-selected="false">Categorias</a></li>
+                    <li class="nav-item"><a class="nav-link" id="nav-reservation-tab" data-bs-toggle="tab" data-bs-target="#nav-reservation" type="button" role="tab" aria-controls="nav-reservation" aria-selected="false">Reservaciones</a></li>
+                </ul>
+            </div>
+            <!--card body-->
+            <div class="card-body tab-content" id="nav-tabContent">
+                <div class="tab-pane fade show active" id="nav-farm" role="tabpanel" aria-labelledby="nav-farm-tab">
+                    <h4 class="card-title">Finca</h4>
+                    <p class="card-text">Crear y consultar fincas</p>
+                    <button class="btn btn-primary" type="button" id="btnFarm">Nueva Finca</button>
+                    <button class="btn btn-primary" type="button" id="btnListFarm">Consultar</button>
+                </div>
+                <div class="tab-pane fade" id="nav-client" role="tabpanel" aria-labelledby="nav-client-tab">
+                    <h4 class="card-title">Cliente</h4>
+                    <p class="card-text">Crear y consultar cliente</p>
+                    <button class="btn btn-primary" type="button" id="btnClient">Nuevo Cliente</button>
+                    <button class="btn btn-primary" type="button" id="btnListClient">Consultar</button>
+                </div>
+                <div class="tab-pane fade" id="nav-category" role="tabpanel" aria-labelledby="nav-category-tab">
+                    <h4 class="card-title">Categorias</h4>
+                    <p class="card-text">Crear y consultar categorias</p>
+                    <button class="btn btn-primary" type="button" id="btnCategory">Nueva Categoria</button>
+                    <button class="btn btn-primary" type="button" id="btnListCategory"><i class="bi bi-table"></i> Consultar</button>
+                </div>
+                <div class="tab-pane fade" id="nav-message" role="tabpanel" aria-labelledby="nav-message-tab">
+                    <h4 class="card-title">Mensajes</h4>
+                    <p class="card-text">Crear y consultar mensajes</p>
+                    <button class="btn btn-primary" type="button" id="btnMessage">Nuevo Mensaje</button>
+                    <button class="btn btn-primary" type="button" id="btnListMessage">Consultar</button>
+                </div>
+                <div class="tab-pane fade" id="nav-reservation" role="tabpanel" aria-labelledby="nav-reservation-tab">
+                    <h4 class="card-title">Reservaciones</h4>
+                    <p class="card-text">Crear y consultar reservaciones</p>
+                    <button class="btn btn-primary" type="button" id="btnReservation">Nueva Reservacion</button>
+                    <button class="btn btn-primary" type="button" id="btnListReservation">Consultar</button>
+                </div>
+            </div>
+        </div>
+        <!--Form Create Farm-->
+        <form method="post" id="newFarm">
+            <h2 class="text-center"><strong>Crear</strong> Finca</h2>
+            <div class="mb-3 form-floating">
+                <input type="text" id="name" class="form-control" placeholder="name">
+                <label for="name">Nombre</label>
+            </div>
+            <div class="mb-3 form-floating">
+                <input type="text" id="address" class="form-control" placeholder="address">
+                <label for="address">Dirección</label>
+            </div>
+            <div class="mb-3 form-floating">
+                <input type="number" id="extension" class="form-control" placeholder="Extension">
+                <label for="extension">Extension</label>
+            </div>
+            <div class="mb-3 form-floating">
+                <input type="text" id="description" class="form-control" placeholder="description">
+                <label for="description">Descripción</label>
+            </div>
+            <div class="mb-3 form-floating">
+                <select name="category" id="categID" class="form-select" aria-label="Floating label Categoria ID"></select>
+                <label for="categID">Categoría</label>
+            </div>
+            <div class="mb-3 form-floating">
+                <button class="btn btn-primary d-block w-50 mx-auto" type="submit" id="createFarm">Crear</button>
+            </div>
+        </form>
+        <!--Form Create Client-->
+        <form method="post" id="newClient">
+            <h2 class="text-center"><strong>Crear</strong> Cliente</h2>
+            <div class="mb-3 form-floating">
+                <input type="text" id="nameClient" class="form-control" placeholder="name Client">
+                <label for="nameClient">Nombre</label>
+            </div>
+            <div class="mb-3 form-floating">
+                <input type="email" id="emailClient" class="form-control" placeholder="Email">
+                <label for="emailClient">Email</label>
+            </div>
+            <div class="mb-3 form-floating">
+                <input type="password" id="passClient" class="form-control" placeholder="Password">
+                <label for="passClient">Contraseña</label>
+            </div>
+            <div class="mb-3 form-floating">
+                <input type="number" id="ageClient" class="form-control" placeholder="Age">
+                <label for="ageClient">Edad</label>
+            </div>
+            <div class="mb-3 form-floating">
+                <button class="btn btn-primary d-block w-50 mx-auto" type="submit" id="createClient">Crear Cliente</button>
+            </div>
+        </form>
+        <!--Form Message-->
+        <form method="post" id="newMessage">
+            <h2 class="text-center"><strong>Crear</strong> Mensaje</h2>
+            <div class="mb-3 form-floating">
+                <!--<input type="text" id="smsText" class="form-control" placeholder="Mensaje">-->
+                <textarea id="smsText" class="form-control" placeholder="Message"></textarea>
+                <label for="smsText">Mensaje</label>
+            </div>
+            <div class="mb-3 form-floating">
+                <select name="category" id="clientID" class="form-select" aria-label="Floating label Categoria ID"></select>
+                <label for="clientID">Cliente</label>
+            </div>
+            <div class="mb-3 form-floating">
+                <select name="category" id="farmID" class="form-select" aria-label="Floating label Categoria ID"></select>
+                <label for="farmID">Finca</label>
+            </div>
+            <div class="mb-3 form-floating">
+                <button class="btn btn-primary d-block w-50 mx-auto" type="submit" id="createMessage">Crear</button>
+            </div>
+        </form>
+        <!--Form Category-->
+        <form id="newCategory">
+            <h2 class="text-center"><strong>Crear</strong> Categoria</h2>
+            <div class="mb-3 form-floating">
+                <input type="text" id="nameCat" class="form-control" placeholder="name Category" required>
+                <label for="nameCat">Nombre</label>
+                <div class="invalid-feedback">
+                    Ingrese un nombre
+                </div>
+            </div>
+            <div class="mb-3 form-floating">
+                <input type="text" id="catDescript" class="form-control" placeholder="description" required>
+                <label for="catDescript">Descripción</label>
+                <div class="invalid-feedback">
+                    ingrese una descripciòn
+                </div>
+            </div>
+            <div id="alertCat"></div>
+            <div class="mb-3">
+                <button class="btn btn-primary d-block w-50 mx-auto" type="submit" id="newCat">Crear Categoria</button>
+            </div>
+        </form>
+        <!--Form Reservation-->
+        <form method="post" id="newReservation">
+            <h2 class="text-center"><strong>Crear</strong> Reservación</h2>
+            <div class="mb-3 form-floating">
+                <input type="date" id="startDate" class="form-control" placeholder="Fecha de inicio">
+                <label for="startDate">Fecha de inicio</label>
+            </div>
+            <div class="mb-3 form-floating">
+                <input type="date" id="endDate" class="form-control" placeholder="Fecha de Finalización">
+                <label for="endDate">Fecha de finalización</label>
+            </div>
+            <div class="mb-3 form-floating">
+                <select name="category" id="idClient" class="form-select" aria-label="Floating label Categoria ID"></select>
+                <label for="idClient">Cliente</label>
+            </div>
+            <div class="mb-3 form-floating">
+                <select name="category" id="idFarm" class="form-select" aria-label="Floating label Categoria ID"></select>
+                <label for="idFarm">Finca</label>
+            </div>
+            <div class="mb-3 form-floating">
+                <button class="btn btn-primary d-block w-50 mx-auto" type="submit" id="createReserva">Crear Reserva</button>
+            </div>
+        </form>
+        <!--Table show data-->
+        <table class="table" id="tableData"></table>
+        <!--Form update Farm-->
+        <div class="modal fade" id="modalFarm" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Actualizar Finca</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <form id="uFarm">
+                    <h2 class="text-center"><strong>Actualizar</strong> Finca</h2>
+                    <div class="mb-3 form-floating">
+                        <input type="text" id="uptName" class="form-control" placeholder="name">
+                        <label for="uptName">Nombre</label>
+                    </div>
+                    <div class="mb-3 form-floating">
+                        <input type="text" id="uptAddress" class="form-control" placeholder="address">
+                        <label for="uptAddress">Dirección</label>
+                    </div>
+                    <div class="mb-3 form-floating">
+                        <input type="number" id="uptExtension" class="form-control" placeholder="Extension">
+                        <label for="uptExtension">Extencision</label>
+                    </div>
+                    <div class="mb-3 form-floating">
+                        <input type="text" id="uptDescription" class="form-control" placeholder="description">
+                        <label for="uptDescription">Descripción</label>
+                    </div>
+                    <div class="mb-3 form-floating">
+                        <select name="category" id="uptCatID" class="form-select" aria-label="Floating label Categoria ID"></select>
+                        <label for="uptCatID">Categoría</label>
+                    </div>
+                    <input type="hidden" id="farmsID">
+                  </form>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancelar</button>
+                  <button type="button" class="btn btn-primary" id="putFarm">Actualizar</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        <!--Form update Client-->
+        <div class="modal fade" id="modalClient" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Actualizar Cliente</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <form id="uClient">
+                    <h2 class="text-center"><strong>Actualizar</strong> Cliente</h2>
+                    <div class="mb-3 form-floating">
+                        <input type="text" id="uptNameClient" class="form-control" placeholder="name Client">
+                        <label for="uptNameClien">Nombre</label>
+                    </div>
+                    <div class="mb-3 form-floating">
+                        <input type="email" id="uptEmailClient" class="form-control" placeholder="Email">
+                        <label for="uptEmailClient">Email</label>
+                    </div>
+                    <div class="mb-3 form-floating">
+                        <input type="password" id="uptPassClient" class="form-control" placeholder="Password">
+                        <label for="uptPassClient">Contraseña</label>
+                    </div>
+                    <div class="mb-3 form-floating">
+                        <input type="number" id="uptAgeClient" class="form-control" placeholder="Age">
+                        <label for="uptAgeClient">Edad</label>
+                    </div>
+                    <input type="hidden" id="clientsID">
+                  </form>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancelar</button>
+                  <button type="button" class="btn btn-primary" id="putClient">Actualizar</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        <!--Form update Category-->
+        <div class="modal fade" id="modalCategory" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Actualizar Categoría</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <form id="uCategory">
+                    <h2 class="text-center"><strong>Actualizar</strong> Categoría</h2>
+                    <div class="mb-3 form-floating">
+                        <input type="text" id="uNameCat" class="form-control" placeholder="name Category">
+                        <label for="uameCat">Nombre</label>
+                    </div>
+                    <div class="mb-3 form-floating">
+                        <input type="text" id="uCatDescript" class="form-control" placeholder="description">
+                        <label for="uCatDescript">Descripción</label>
+                    </div>
+                    <input type="hidden" id="catID">
+                  </form>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancelar</button>
+                  <button type="button" class="btn btn-primary" id="putCategory">Actualizar</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        <!--Form update Message-->
+        <div class="modal fade" id="modalMessage" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Actualizar Mensaje</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <form id="uMessage">
+                    <h2 class="text-center"><strong>Actualizar</strong> Mensaje</h2>
+                    <div class="mb-3 form-floating">
+                        <textarea id="usmsText" class="form-control" placeholder="Message"></textarea>
+                        <label for="usmsText">Mensaje</label>
+                    </div>
+                    <div class="mb-3 form-floating">
+                        <select name="category" id="uptClient" class="form-select" aria-label="Floating label Categoria ID"></select>
+                        <label for="uptClient">Cliente</label>
+                    </div>
+                    <div class="mb-3 form-floating">
+                        <select name="category" id="uptFarm" class="form-select" aria-label="Floating label Categoria ID"></select>
+                        <label for="uptFarm">Finca</label>
+                    </div>
+                    <input type="hidden" id="messageID">
+                  </form>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancelar</button>
+                  <button type="button" class="btn btn-primary" id="putMessage">Actualizar</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        <!--Form update Reservation-->
+        <div class="modal fade" id="modalReservation" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Actualizar Reservación</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <form id="uReservation">
+                    <h2 class="text-center"><strong>Actualizar</strong> Reservación</h2>
+                    <div class="mb-3 form-floating">
+                        <input type="date" id="ustartDate" class="form-control" placeholder="Fecha de inicio">
+                        <label for="ustartDate">Fecha de inicio</label>
+                    </div>
+                    <div class="mb-3 form-floating">
+                        <input type="date" id="uendDate" class="form-control" placeholder="Fecha de Finalización">
+                        <label for="uendDate">Fecha de finalización</label>
+                    </div>
+                    <div class="mb-3 form-floating">
+                        <select name="category" id="uptClientt" class="form-select" aria-label="Floating label Categoria ID" disabled></select>
+                        <label for="uptClientt">Cliente</label>
+                    </div>
+                    <div class="mb-3 form-floating">
+                        <select name="category" id="uptFarmm" class="form-select" aria-label="Floating label Categoria ID" disabled></select>
+                        <label for="uptFarmm">Finca</label>
+                    </div>
+                    <input type="hidden" id="reservationID">
+                  </form>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancelar</button>
+                  <button type="button" class="btn btn-primary" id="putReservation">Actualizar</button>
+                </div>
+              </div>
+            </div>
+          </div>
+    </div>
+    <!--Pie de página-->
+    <footer class="footer-basic">
+        <p class="copyright">USA | MinTic ©2021</p>
+    </footer>
+    <!--Scripts-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script type="text/javascript" src="js/misFunciones.js"></script>
+</body>
+</html>

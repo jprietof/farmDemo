@@ -14,6 +14,11 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
+/**
+ * 
+ * @author jprietof
+ * @version 1.1
+ */
 @Entity
 @Table(name = "farm")
 public class Farm implements Serializable{
@@ -21,27 +26,57 @@ public class Farm implements Serializable{
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
+	/**
+	 * Creación de la tabla con sus campos
+	 * Atributo Id de la tabla
+	 */
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
+	/**
+	 * Atributo nombre de la finca
+	 */
 	private String name;
+	/**
+	 * Atributo dirección de la finca
+	 */
 	private String address;
+	/**
+	 * Atributo extensión de la finca
+	 */
 	private Integer extension;
+	/**
+	 * Atributo descripción de la finca
+	 */
 	private String description;
+	/**
+	 * Relación muchos a uno con la tabla category
+	 * una categoría tiene varias fincas y una finca pertenece a una categoría
+	 */
 	
 	@ManyToOne
 	@JoinColumn(name="categoryId")
 	@JsonIgnoreProperties("farms")
 	private Category category;
 	
+	/**
+	 * Relación uno a muchos con la tabla message
+	 * una finca tiene varios mensajes y un mensaje se crea a una finca
+	 */
 	@OneToMany(cascade = {CascadeType.PERSIST}, mappedBy = "farm")
 	@JsonIgnoreProperties({"farm", "client"})
 	private List<Message> messages;
-	
+	/**
+	 * Relación uno a muchos con la tabla reservations
+	 * una finca tiene varias reservaciones pero una reservación le pertenece a una finca
+	 */
 	@OneToMany(cascade = {CascadeType.PERSIST}, mappedBy = "farm")
 	@JsonIgnoreProperties({"farm", "client"})
 	private List<Reservation> reservations;
-
+	/**
+	 * Getters and Setters de los campos de Farm
+	 * @return
+	 */
 	public Integer getId() {
 		return id;
 	}
