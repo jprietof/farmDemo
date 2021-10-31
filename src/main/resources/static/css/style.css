@@ -78,7 +78,7 @@ form .btn-secundary:hover {
   padding: 20px 0;
   background-color: #444;
   color: #fff;
-  position: fixed;
+  /*position: fixed;*/
   width: 100%;
   bottom: 0px;
 }

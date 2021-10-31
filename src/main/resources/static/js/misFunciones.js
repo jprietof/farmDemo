@@ -89,7 +89,7 @@ $("#btnListCategory").on("click", function(e){
 //Mostar Datos
 function getCategory(){
     $.ajax({
-        url:"http://129.151.114.181/api/Category/all",
+        url:"http://129.151.114.181:8080/api/Category/all",
         type:"GET",
         datatype:"JSON",
         success:function(respuesta){
@@ -135,7 +135,7 @@ $("#newCat").on("click", function(e){
 });
 function saveCategory(data){
     $.ajax({
-        url: 'http://129.151.114.181/api/Category/save',
+        url: 'http://129.151.114.181:8080/api/Category/save',
         method: 'POST',
         dataType: 'JSON',
         contentType:"application/JSON; charset=utf-8",
@@ -163,7 +163,7 @@ function alertData(message, type){
 //añadir categorias a los select realcionales
 function selectCategory(){
     $.ajax({
-        url:"http://129.151.114.181/api/Category/all",
+        url:"http://129.151.114.181:8080/api/Category/all",
         type:"GET",
         datatype:"JSON",
         success:function(respuesta){
@@ -187,7 +187,7 @@ function removeSelect(){
 function getOneCategory(id){
     console.log(id);
     $.ajax({
-        url: 'http://129.151.114.181/api/Category/'+id,
+        url: 'http://129.151.114.181:8080/api/Category/'+id,
         method: 'GET',
         dataType: 'JSON',
         success: function(data) {
@@ -212,7 +212,7 @@ $("#putCategory").on("click", function(e){
 })
 function actualizarCategoria(data){
     $.ajax({
-        url: "http://129.151.114.181/api/Category/update",
+        url: "http://129.151.114.181:8080/api/Category/update",
         type: "PUT",
         dataType: "JSON",
         contentType:"application/JSON; charset=utf-8",
@@ -236,7 +236,7 @@ function actualizarCategoria(data){
 //borrar catagoria
 function deleteCategory(id){
     $.ajax({
-        url:"http://129.151.114.181/api/Category/"+id,
+        url:"http://129.151.114.181:8080/api/Category/"+id,
         method:"DELETE",
         datatype:"JSON",
         success:function(respuesta){
@@ -260,7 +260,7 @@ $("#btnListFarm").on("click", function(e){
 //Mostar Datos de fincas
 function getFarm(){
     $.ajax({
-        url:"http://129.151.114.181/api/Farm/all",
+        url:"http://129.151.114.181:8080/api/Farm/all",
         type:"GET",
         datatype:"JSON",
         success:function(respuesta){
@@ -319,7 +319,7 @@ $("#createFarm").on("click", function(e){
 });
 function saveFarm(dataFarm){
     $.ajax({
-        url: 'http://129.151.114.181/api/Farm/save',
+        url: 'http://129.151.114.181:8080/api/Farm/save',
         method: 'POST',
         dataType: 'JSON',
         contentType:"application/JSON; charset=utf-8",
@@ -341,7 +341,7 @@ function saveFarm(dataFarm){
 // llenar campos relacionales a finca
 function selectFarm(){
     $.ajax({
-        url:"http://129.151.114.181/api/Farm/all",
+        url:"http://129.151.114.181:8080/api/Farm/all",
         type:"GET",
         datatype:"JSON",
         success:function(respuesta){
@@ -372,7 +372,7 @@ function removeSelectFarm(){
 function getOneFarm(id){
     console.log(id);
     $.ajax({
-        url: 'http://129.151.114.181/api/Farm/'+id,
+        url: 'http://129.151.114.181:8080/api/Farm/'+id,
         method: 'GET',
         dataType: 'JSON',
         success: function(data) {
@@ -403,7 +403,7 @@ $("#putFarm").on("click", function(e){
 })
 function actualizarFarm(data){
     $.ajax({
-        url: "http://129.151.114.181/api/Farm/update",
+        url: "http://129.151.114.181:8080/api/Farm/update",
         type: "PUT",
         dataType: "JSON",
         contentType:"application/JSON; charset=utf-8",
@@ -425,7 +425,7 @@ function actualizarFarm(data){
 //borrar finca
 function deleteFarm(id){
     $.ajax({
-        url:"http://129.151.114.181/api/Farm/"+id,
+        url:"http://129.151.114.181:8080/api/Farm/"+id,
         method:"DELETE",
         datatype:"JSON",
         success:function(respuesta){
@@ -449,7 +449,7 @@ $("#btnListClient").on("click", function(e){
 //Mostar Datos de Clientes
 function getClient(){
     $.ajax({
-        url:"http://129.151.114.181/api/Client/all",
+        url:"http://129.151.114.181:8080/api/Client/all",
         type:"GET",
         datatype:"JSON",
         success:function(respuesta){
@@ -505,7 +505,7 @@ $("#createClient").on("click", function(e){
 });
 function saveClient(dataClient){
     $.ajax({
-        url: 'http://129.151.114.181/api/Client/save',
+        url: 'http://129.151.114.181:8080/api/Client/save',
         method: 'POST',
         dataType: 'JSON',
         contentType:"application/JSON; charset=utf-8",
@@ -527,7 +527,7 @@ function saveClient(dataClient){
 // llenar campos relacionales a cliente
 function selectClient(){
     $.ajax({
-        url:"http://129.151.114.181/api/Client/all",
+        url:"http://129.151.114.181:8080/api/Client/all",
         type:"GET",
         datatype:"JSON",
         success:function(respuesta){
@@ -557,7 +557,7 @@ function removeSelectClient(){
 function getOneClient(id){
     console.log(id);
     $.ajax({
-        url: 'http://129.151.114.181/api/Client/'+id,
+        url: 'http://129.151.114.181:8080/api/Client/'+id,
         method: 'GET',
         dataType: 'JSON',
         success: function(data) {
@@ -586,7 +586,7 @@ $("#putClient").on("click", function(e){
 //actualiza los datos del cliente
 function actualizarClient(data){
     $.ajax({
-        url: "http://129.151.114.181/api/Client/update",
+        url: "http://129.151.114.181:8080/api/Client/update",
         type: "PUT",
         dataType: "JSON",
         contentType:"application/JSON; charset=utf-8",
@@ -608,7 +608,7 @@ function actualizarClient(data){
 //borrar Cliente
 function deleteClient(id){
     $.ajax({
-        url:"http://129.151.114.181/api/Client/"+id,
+        url:"http://129.151.114.181:8080/api/Client/"+id,
         method:"DELETE",
         datatype:"JSON",
         success:function(respuesta){
@@ -632,7 +632,7 @@ $("#btnListMessage").on("click", function(e){
 //Mostar Datos de Mensajes
 function getMessage(){
     $.ajax({
-        url:"http://129.151.114.181/api/Message/all",
+        url:"http://129.151.114.181:8080/api/Message/all",
         type:"GET",
         datatype:"JSON",
         success:function(respuesta){
@@ -685,7 +685,7 @@ $("#createMessage").on("click", function(e){
 });
 function saveMessage(dataMessage){
     $.ajax({
-        url: 'http://129.151.114.181/api/Message/save',
+        url: 'http://129.151.114.181:8080/api/Message/save',
         method: 'POST',
         dataType: 'JSON',
         contentType:"application/JSON; charset=utf-8",
@@ -706,7 +706,7 @@ function saveMessage(dataMessage){
 function getOneMessage(id){
     console.log(id);
     $.ajax({
-        url: 'http://129.151.114.181/api/Message/'+id,
+        url: 'http://129.151.114.181:8080/api/Message/'+id,
         method: 'GET',
         dataType: 'JSON',
         success: function(data) {
@@ -733,7 +733,7 @@ $("#putMessage").on("click", function(e){
 })
 function actualizarMessage(data){
     $.ajax({
-        url: "http://129.151.114.181/api/Message/update",
+        url: "http://129.151.114.181:8080/api/Message/update",
         type: "PUT",
         dataType: "JSON",
         contentType:"application/JSON; charset=utf-8",
@@ -755,7 +755,7 @@ function actualizarMessage(data){
 //borrar Mensaje
 function deleteMessage(id){
     $.ajax({
-        url:"http://129.151.114.181/api/Message/"+id,
+        url:"http://129.151.114.181:8080/api/Message/"+id,
         method:"DELETE",
         datatype:"JSON",
         success:function(respuesta){
@@ -779,7 +779,7 @@ $("#btnListReservation").on("click", function(e){
 //Mostar Datos de Reservaciones
 function getReservation(){
     $.ajax({
-        url:"http://129.151.114.181/api/Reservation/all",
+        url:"http://129.151.114.181:8080/api/Reservation/all",
         type:"GET",
         datatype:"JSON",
         success:function(respuesta){
@@ -835,7 +835,7 @@ $("#createReserva").on("click", function(e){
 });
 function saveReservation(dataReservation){
     $.ajax({
-        url: 'http://129.151.114.181/api/Reservation/save',
+        url: 'http://129.151.114.181:8080/api/Reservation/save',
         method: 'POST',
         dataType: 'JSON',
         contentType:"application/JSON; charset=utf-8",
@@ -857,7 +857,7 @@ function saveReservation(dataReservation){
 function getOneReservation(id){
     console.log(id);
     $.ajax({
-        url: 'http://129.151.114.181/api/Reservation/'+id,
+        url: 'http://129.151.114.181:8080/api/Reservation/'+id,
         method: 'GET',
         dataType: 'JSON',
         success: function(data) {
@@ -905,7 +905,7 @@ $("#putReservation").on("click", function(e){
 })
 function actualizarReservation(data){
     $.ajax({
-        url: "http://129.151.114.181/api/Reservation/update",
+        url: "http://129.151.114.181:8080/api/Reservation/update",
         type: "PUT",
         dataType: "JSON",
         contentType:"application/JSON; charset=utf-8",
@@ -926,7 +926,7 @@ function actualizarReservation(data){
 //Borrar Reservación
 function deleteReservation(id){
     $.ajax({
-        url:"http://129.151.114.181/api/Reservation/"+id,
+        url:"http://129.151.114.181:8080/api/Reservation/"+id,
         method:"DELETE",
         datatype:"JSON",
         success:function(respuesta){
