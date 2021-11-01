@@ -1,30 +1,13 @@
-a {
-  text-decoration: none;
+body {
+  background: #f1f7fc;
 }
-.header-dark .navbar {
-  /*background: transparent;*/
-  background: #444;
-  color: #fff;
-  border-radius: 0;
-  box-shadow: none;
-  border: none;
-  padding-top: 0.75rem;
-  padding-bottom: 0.75rem;
-  font-weight: bold;
+
+#imagen{
+	width:30px;
+	height:30px;
 }
-.navbar .navbar-brand {
-  color: #fff;
-}
-/*.navbar-expand-lg .navbar-collapse {
-  display: flex !important;
-  flex-basis: auto;
-}*/
-.navbar-text {
-  padding: 0.5rem;
-}
-.navbar-text a {
-  color: #fff;
-}
+/*---------------------*/
+
 .mb-3 {
   margin-bottom: 1rem !important;
 }
@@ -74,6 +57,13 @@ form .btn-secundary:hover {
 /*****************************
             FOOTER
 ******************************/
+.sticky-footer{
+	/*position: absolute;
+	width: 100%;
+	height:auto;
+	bottom: 0px;
+	background: #444;*/
+}
 .footer-basic {
   padding: 20px 0;
   background-color: #444;
