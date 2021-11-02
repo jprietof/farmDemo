@@ -57,24 +57,4 @@ form .btn-secundary:hover {
 /*****************************
             FOOTER
 ******************************/
-.sticky-footer{
-	/*position: absolute;
-	width: 100%;
-	height:auto;
-	bottom: 0px;
-	background: #444;*/
-}
-.footer-basic {
-  padding: 20px 0;
-  background-color: #444;
-  color: #fff;
-  /*position: fixed;*/
-  width: 100%;
-  bottom: 0px;
-}
-.footer-basic .copyright {
-  margin-top: 15px;
-  text-align: center;
-  font-size: 13px;
-  margin-bottom: 0;
-}
+

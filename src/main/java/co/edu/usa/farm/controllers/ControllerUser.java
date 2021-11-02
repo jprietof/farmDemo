@@ -5,7 +5,7 @@ import org.springframework.security.oauth2.core.user.OAuth2User;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.Collections;
+
 import java.util.HashMap;
 import java.util.Map;
 
@@ -17,8 +17,6 @@ public class ControllerUser {
 		Map<String, Object> data = new HashMap<String, Object>();
 		data.put("name", principal.getAttribute("name"));
 		data.put("avatar", principal.getAttribute("avatar_url"));
-		Map<String, Object> name = Collections.singletonMap("name", principal.getAttribute("name"));
-		Map<String, Object> img = Collections.singletonMap("avatar_url", principal.getAttribute("avatar_url"));
         //return Collections.singletonMap("name", principal.getAttribute("name"));
 		return data;
     }
