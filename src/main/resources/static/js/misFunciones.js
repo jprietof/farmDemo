@@ -987,7 +987,7 @@ $("#btnReportOk").on("click", function(e){
 })
 function getCompletCancel(){
     $.ajax({
-        url: "http://localhost:8080/api/Reservation/report-status",
+        url: "http://129.151.114.181:8080/api/Reservation/report-status",
         type: "GET",
         datatype: "JSON",
         success: function(data){
@@ -1062,7 +1062,7 @@ function getReservationDate(){
     console.log(dataStart);
     console.log(dataEnd);
     $.ajax({
-        url:"http://localhost:8080/api/Reservation/report-dates/"+dataStart+"/"+dataEnd,
+        url:"http://129.151.114.181:8080/api/Reservation/report-dates/"+dataStart+"/"+dataEnd,
         type: "GET",
         datatype:"JSON",
         success:function (respuesta) {
@@ -1105,7 +1105,7 @@ $("#btnReportTop").on("click", function(e){
 })
 function getClientTop(){
     $.ajax({
-        url:"http://localhost:8080/api/Reservation/report-clients",
+        url:"http://129.151.114.181:8080/api/Reservation/report-clients",
         type:"GET",
         datatype:"JSON",
         success:function(respuesta){
