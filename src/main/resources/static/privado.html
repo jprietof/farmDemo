@@ -43,6 +43,7 @@
                     <li class="nav-item"><a class="nav-link" id="nav-message-tab" data-bs-toggle="tab" data-bs-target="#nav-message" type="button" role="tab" aria-controls="nav-message" aria-selected="false">Mensajes</a></li>
                     <li class="nav-item"><a class="nav-link" id="nav-category-tab" data-bs-toggle="tab" data-bs-target="#nav-category" type="button" role="tab" aria-controls="nav-category" aria-selected="false">Categorias</a></li>
                     <li class="nav-item"><a class="nav-link" id="nav-reservation-tab" data-bs-toggle="tab" data-bs-target="#nav-reservation" type="button" role="tab" aria-controls="nav-reservation" aria-selected="false">Reservaciones</a></li>
+                    <li class="nav-item"><a class="nav-link" id="nav-reports-tab" data-bs-toggle="tab" data-bs-target="#nav-reports" type="button" role="tab" aria-controls="nav-reports" aria-selected="false">Reportes</a></li>
                 </ul>
             </div>
             <!--card body-->
@@ -77,6 +78,13 @@
                     <button class="btn btn-primary" type="button" id="btnReservation">Nueva Reservacion</button>
                     <button class="btn btn-primary" type="button" id="btnListReservation">Consultar</button>
                 </div>
+                <div class="tab-pane fade" id="nav-reports" role="tabpanel" aria-labelledby="nav-reports-tab">
+                    <h4 class="card-title">Reportes</h4>
+                    <p class="card-text">Consultar reportes referente a las reservaciones</p>
+                    <button class="btn btn-primary" type="button" id="btnReportDate">Reservas por Fecha</button>
+                    <button class="btn btn-primary" type="button" id="btnReportOk">Estado de las reservas</button>
+                    <button class="btn btn-primary" type="button" id="btnReportTop">Clientes Top</button>
+                </div>
             </div>
         </div>
         <!--Form Create Farm-->
@@ -102,6 +110,7 @@
                 <select name="category" id="categID" class="form-select" aria-label="Floating label Categoria ID"></select>
                 <label for="categID">Categoría</label>
             </div>
+            <div id="alertFarm"></div>
             <div class="mb-3 form-floating">
                 <button class="btn btn-primary d-block w-50 mx-auto" type="submit" id="createFarm">Crear</button>
             </div>
@@ -125,6 +134,7 @@
                 <input type="number" id="ageClient" class="form-control" placeholder="Age">
                 <label for="ageClient">Edad</label>
             </div>
+            <div id="alertClient"></div>
             <div class="mb-3 form-floating">
                 <button class="btn btn-primary d-block w-50 mx-auto" type="submit" id="createClient">Crear Cliente</button>
             </div>
@@ -145,6 +155,7 @@
                 <select name="category" id="farmID" class="form-select" aria-label="Floating label Categoria ID"></select>
                 <label for="farmID">Finca</label>
             </div>
+            <div id="alertMessage"></div>
             <div class="mb-3 form-floating">
                 <button class="btn btn-primary d-block w-50 mx-auto" type="submit" id="createMessage">Crear</button>
             </div>
@@ -190,6 +201,7 @@
                 <select name="category" id="idFarm" class="form-select" aria-label="Floating label Categoria ID"></select>
                 <label for="idFarm">Finca</label>
             </div>
+            <div id="alertReservation"></div>
             <div class="mb-3 form-floating">
                 <button class="btn btn-primary d-block w-50 mx-auto" type="submit" id="createReserva">Crear Reserva</button>
             </div>
@@ -373,6 +385,19 @@
               </div>
             </div>
           </div>
+    </div>
+    <!--Seccion de reportes-->
+    <div class="container" id="reportsFarm">
+        <div class="d-sm-flex justify-content-between align-items-center mb-4">
+            <h3 class="text-dark mb-0">Reportes</h3>
+        </div>
+        <div class="row">
+            <div class="col-auto">
+                <div class="card shadow border-start-primary py-2">
+                    <div class="card-body" id="reporte"></div>
+                </div>
+            </div>
+        </div>
     </div>
     <!--Pie de página-->
     <footer class="bg-white sticky-footer fixed-bottom">

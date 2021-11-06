@@ -12,6 +12,7 @@ function ocultarElementos(dato){
             $("#newCategory").hide();
             $("#newReservation").hide();
             $("#tableData").hide();
+            $("#reportsFarm").hide();
             break;
         case "client":
             $("#newFarm").hide();
@@ -20,6 +21,7 @@ function ocultarElementos(dato){
             $("#newCategory").hide();
             $("#newReservation").hide();
             $("#tableData").hide();
+            $("#reportsFarm").hide();
             break;
          case "message":
             $("#newFarm").hide();
@@ -28,6 +30,7 @@ function ocultarElementos(dato){
             $("#newCategory").hide();
             $("#newReservation").hide();
             $("#tableData").hide();
+            $("#reportsFarm").hide();
             break;
          case "category":
             $("#newFarm").hide();
@@ -36,6 +39,7 @@ function ocultarElementos(dato){
             $("#newCategory").toggle();
             $("#newReservation").hide();
             $("#tableData").hide();
+            $("#reportsFarm").hide();
             break;
         case "reservation":
             $("#newFarm").hide();
@@ -44,13 +48,24 @@ function ocultarElementos(dato){
             $("#newCategory").hide();
             $("#newReservation").toggle();
             $("#tableData").hide();
+            $("#reportsFarm").hide();
             break;
+        case "reports":
+            $("#newFarm").hide();
+            $("#newClient").hide();
+            $("#newMessage").hide();
+            $("#newCategory").hide();
+            $("#newReservation").hide();
+            $("#tableData").hide();
+            $("#reportsFarm").show();
+             break;
         default:
             $("#newFarm").hide();
             $("#newClient").hide();
             $("#newMessage").hide();
             $("#newCategory").hide();
             $("#newReservation").hide();
+            $("#reportsFarm").hide();
             
     }
 }
@@ -256,6 +271,7 @@ $("#btnListFarm").on("click", function(e){
     getFarm();
     $("#tableData").toggle();
     ocultarElementos();
+    e.preventDefault();
 })
 //Mostar Datos de fincas
 function getFarm(){
@@ -326,8 +342,8 @@ function saveFarm(dataFarm){
         data: dataFarm,
         success: function(data) {
             console.log(data);
-            alert("Se guardo correctamente");
-            //alertData('La categoría se creo correctamente', 'success');
+            //alert("Se guardo correctamente");
+            alertFarm('La finca se creo correctamente', 'success');
             getFarm();
             removeSelectFarm();
             selectFarm();
@@ -337,6 +353,12 @@ function saveFarm(dataFarm){
             alert("No se puede actualizar: "+textStatus +" "+jqXHR+" "+errorThrown)
         }
     });
+}
+function alertFarm(message, type){
+    var alertPlaceholder = document.getElementById("alertFarm")
+    var wrapper = document.createElement('div')
+    wrapper.innerHTML = '<div class="alert alert-' + type + ' alert-dismissible" role="alert">' + message + '<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button></div>'
+    alertPlaceholder.append(wrapper)
 }
 // llenar campos relacionales a finca
 function selectFarm(){
@@ -512,8 +534,8 @@ function saveClient(dataClient){
         data: dataClient,
         success: function(data) {
             console.log(data);
-            alert("Se guardo correctamente");
-            //alertData('La categoría se creo correctamente', 'success');
+            //alert("Se guardo correctamente");
+            alertClient('El cliente se creo correctamente', 'success');
             getClient();
             removeSelectClient();
             selectClient();
@@ -523,6 +545,12 @@ function saveClient(dataClient){
             alert("No se puede actualizar: "+textStatus +" "+jqXHR+" "+errorThrown)
         }
     });
+}
+function alertClient(message, type){
+    var alertPlaceholder = document.getElementById("alertClient")
+    var wrapper = document.createElement('div')
+    wrapper.innerHTML = '<div class="alert alert-' + type + ' alert-dismissible" role="alert">' + message + '<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button></div>'
+    alertPlaceholder.append(wrapper)
 }
 // llenar campos relacionales a cliente
 function selectClient(){
@@ -596,7 +624,7 @@ function actualizarClient(data){
             getClient();
             alert("Se actualizo correctamente");
             //$("#exampleModal").hide();
-            var myModalEl = document.getElementById('modalCLient');  
+            var myModalEl = document.getElementById('modalClient');  
             var modal = bootstrap.Modal.getInstance(myModalEl)
             modal.hide()
         },
@@ -692,8 +720,8 @@ function saveMessage(dataMessage){
         data: dataMessage,
         success: function(data) {
             console.log(data);
-            alert("Se guardo correctamente");
-            //alertData('La categoría se creo correctamente', 'success');
+            //alert("Se guardo correctamente");
+            alertMessage('El mensaje se creo correctamente', 'success');
             getMessage();
         },
         error: function(jqXHR, textStatus, errorThrown) {
@@ -701,6 +729,12 @@ function saveMessage(dataMessage){
             alert("No se puede actualizar: "+textStatus +" "+jqXHR+" "+errorThrown)
         }
     });
+}
+function alertMessage(message, type){
+    var alertPlaceholder = document.getElementById("alertMessage")
+    var wrapper = document.createElement('div')
+    wrapper.innerHTML = '<div class="alert alert-' + type + ' alert-dismissible" role="alert">' + message + '<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button></div>'
+    alertPlaceholder.append(wrapper)
 }
 //mostrar datos ha actualizar en el modal
 function getOneMessage(id){
@@ -842,8 +876,8 @@ function saveReservation(dataReservation){
         data: dataReservation,
         success: function(data) {
             console.log(data);
-            alert("Se guardo correctamente");
-            //alertData('La categoría se creo correctamente', 'success');
+            //alert("Se guardo correctamente");
+            alertReservation('La reserva se creo correctamente', 'success');
             getReservation();
         },
         error: function(jqXHR, textStatus, errorThrown) {
@@ -852,7 +886,12 @@ function saveReservation(dataReservation){
         }
     });
 }
-
+function alertReservation(message, type){
+    var alertPlaceholder = document.getElementById("alertReservation")
+    var wrapper = document.createElement('div')
+    wrapper.innerHTML = '<div class="alert alert-' + type + ' alert-dismissible" role="alert">' + message + '<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button></div>'
+    alertPlaceholder.append(wrapper)
+}
 //mostrar datos ha actualizar en el modal
 function getOneReservation(id){
     console.log(id);
@@ -935,4 +974,173 @@ function deleteReservation(id){
             alert("Se ha Eliminado.")
         }
     });
+}
+/*+++++++++++++++++++++++++++++
+            REPORTES
++++++++++++++++++++++++++++++++*/
+
+/*-----------REPORTE 1---------------*/
+$("#btnReportOk").on("click", function(e){
+    //getCategory();
+    getCompletCancel();
+    ocultarElementos("reports");
+})
+function getCompletCancel(){
+    $.ajax({
+        url: "http://localhost:8080/api/Reservation/report-status",
+        type: "GET",
+        datatype: "JSON",
+        success: function(data){
+            console.log(data);
+            $('#reporte').html(`<h4 class="card-title text-center">Reservas Completadas y Canceladas</h4>
+                                <div class="row align-items-center no-gutters">
+                                    <div class="col me-2" id="complet">
+                                        <div class="text-uppercase text-primary fw-bold text-xs mb-1"><span>Completadas</span></div>
+                                    </div>
+                                    <div class="col-auto check"><i class="bi bi-check-circle-fill"></i></div>
+                                    </div>
+                                <div class="row align-items-center no-gutters">
+                                    <div class="col me-2" id="cancel">
+                                        <div class="text-uppercase text-danger fw-bold text-xs mb-1"><span>Canceladas</span></div>
+                                    </div>
+                                    <div class="col-auto cancel"><i class="bi bi-x-octagon-fill fa-2x text-gray-300"></i></div>
+                                </div>`)
+            $('#complet').append('<div class="text-dark fw-bold h5 mb-0"><span>'+data.completed+'</span></div>')
+            $('#cancel').append('<div class="text-dark fw-bold h5 mb-0"></span>'+data.cancelled+'</span></div>')
+            
+        }
+
+    });
+}
+/*-----------REPORTE 2---------------*/
+$('#btnReportDate').on("click", function(e){
+    ocultarElementos("reports");
+    getRerportDate();
+    e.preventDefault();
+})
+function getRerportDate(){
+    $("#reporte").html(`<h4 class="card-title text-center">Reservas por un Tiempo determinado</h4>
+                                <form method="post" id="searchDate">
+                                    <h2 class="text-center"><strong>Buscar</strong> Reserva</h2>
+                                    <div class="mb-3 form-floating">
+                                        <input type="date" name="category" id="dateInicio" class="form-control" placeholder="fecha de Inicio"></input>
+                                        <label for="dateInicio">Fecha de Inicio</label>
+                                    </div>
+                                    <div class="mb-3 form-floating">
+                                        <input type="date" name="dateFin" id="dateFin" class="form-control" placeholder="fecha de finalización"></input>
+                                        <label for="dateFin">Fecha de Finalización</label>
+                                    </div>
+                                    <div class="mb-3 form-floating">
+                                        <button class="btn btn-primary d-block w-50 mx-auto" type="button" id="buscarDate">Buscar</button>
+                                    </div>
+                                </form>
+                                <div class="row align-items-center no-gutters">
+                                    <div class="col me-2" id="cantReserva">
+                                    </div>
+                                    <div class="col-auto"><i class="bi bi-calendar fa-2x text-gray-300"></i></div>
+                                    <div id="datos"></div>
+                                    
+                                </div>
+                                <div class="row align-items-center no-gutters">
+                                    <div class="col me-2 table-responsive" id="dataReser">
+                                        <table class="table" id="tableReservation">
+
+                                        </table>
+                                        
+                                    </div>
+                                </div>
+            `)
+            $("#buscarDate").on("click", function(e){
+                $("#tableReservation").hide();
+                getReservationDate();
+            })
+}
+function getReservationDate(){
+    let dataStart= $($("#searchDate")[0].dateInicio).val();
+    let dataEnd= $($("#searchDate")[0].dateFin).val();
+    console.log("Mensaje")
+    console.log(dataStart);
+    console.log(dataEnd);
+    $.ajax({
+        url:"http://localhost:8080/api/Reservation/report-dates/"+dataStart+"/"+dataEnd,
+        type: "GET",
+        datatype:"JSON",
+        success:function (respuesta) {
+            let cantReserva = 0;
+            $("#tableReservation").html(`<thead class="table-info"><tr>
+            <th>#</th>
+            <th>Fecha Inicio</th>
+            <th>Fecha de finalización</th>
+            <th>Estado</th>
+            </tr>
+            </thead>
+            <tbody>`);
+            $(respuesta).each(function(i, data){
+                cantReserva+=1
+            $('#tableReservation').append($("<tr>")
+                        .append($("<td>").append(i+1))
+                        .append($("<td>").append(dateReservation(data.startDate)))
+                        .append($("<td>").append(dateReservation(data.devolutionDate)))
+                        .append($("<td>").append(data.status)))
+            });
+            $('#tableReservation').append("</tbody>")
+            $('#cantReserva').html(`<div class="text-uppercase text-success fw-bold text-xs mb-1"><span>Cantidad de reservas</span></div>
+                                    <div class="text-dark fw-bold h5 mb-0"><span>`+cantReserva+`</span></div>`)
+            $('#datos').html('<button class="btn btn-primary d-block w-50 mx-auto" type="button" id="detalle">Ver Reservas</button>')
+            verMas();
+        }
+    })
+}
+//mostrar detalle de las reservas
+function verMas(){
+    $("#detalle").on("click", function(e){
+        $("#tableReservation").toggle();
+    })
+}
+
+/*-----------REPORTE 3---------------*/
+$("#btnReportTop").on("click", function(e){
+    ocultarElementos("reports");
+    getClientTop();
+})
+function getClientTop(){
+    $.ajax({
+        url:"http://localhost:8080/api/Reservation/report-clients",
+        type:"GET",
+        datatype:"JSON",
+        success:function(respuesta){
+            $("#reporte").html(`<h4 class="card-title text-center">Clientes Top</h4>
+                                <div class="row align-items-center no-gutters">
+                                    <div class="col me-2" id="reportThree">
+                                        <div class="text-uppercase text-primary fw-bold text-xs mb-1"><span>Clientes</span></div>
+                                        <div class="row g-0 align-items-center">
+                                            <div class="col-auto table-responsive">
+                                                <table class="table" id="tableTopClient">
+
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>`)
+
+            $("#tableTopClient").html(`<thead class="table-info"><tr>
+            <th>#</th>
+            <th>Nombre</th>
+            <th>Email</th>
+            <th>Edad</th>
+            <th>Reservas</th>
+            </tr>
+            </thead>
+            <tbody>`);
+            $(respuesta).each(function(i, data){
+            $('#tableTopClient').append($("<tr>")
+                        .append($("<td>").append(i+1))
+                        .append($("<td>").append(data.client.name))
+                        .append($("<td>").append(data.client.email))
+                        .append($("<td>").append(data.client.age))
+                        .append($("<td>").append(data.total)))
+            });
+            $('#tableTopClient').append("</tbody>")
+        }
+    })
 }
